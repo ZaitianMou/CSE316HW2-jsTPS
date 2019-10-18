@@ -36,7 +36,7 @@ class jTPS_Unit_Tests {
         // WE'LL JUST USE A SIMPLE NUM FOR TESTING
         var tps = new jTPS();
         var num = new Num();
-        var result = "Test Add: ";
+        var result = "--Test Add: ";
         result += this.assertEquals(0, num.getNum());
 
         // ADD 5 TRANSACTION
@@ -62,6 +62,8 @@ class jTPS_Unit_Tests {
 
 
         document.getElementById("testResult").innerHTML = result;
+        document.getElementById("testResult").innerHTML+="<br />" ;
+
 
     }
 
@@ -73,7 +75,7 @@ class jTPS_Unit_Tests {
         // WE'LL JUST USE A SIMPLE NUM FOR TESTING
         var tps = new jTPS();
         var num = new Num();
-        var result = "Test andMask: ";
+        var result = "--Test AndMask: ";
 
         result += this.assertEquals(0, num.getNum());
 
@@ -81,7 +83,7 @@ class jTPS_Unit_Tests {
         
         tps.addTransaction(new AddToNum_Transaction(num, 12));
         tps.addTransaction(new AndMask_Transaction(num, num.getNum(), 4));
-        console.log(num.getNum())
+        
         result += this.assertEquals(4, num.getNum());
         result += this.assertEquals(2, tps.getSize());
 
@@ -91,9 +93,9 @@ class jTPS_Unit_Tests {
         result += this.assertEquals(1, tps.getRedoSize());
         result += this.assertEquals(1, tps.getUndoSize());
 
-        document.getElementById("testResult").innerHTML +='\r\n';
+        
         document.getElementById("testResult").innerHTML +=result;
-      
+        document.getElementById("testResult").innerHTML+="<br />" ;
     }
 
     testOrMask() {
@@ -107,7 +109,7 @@ class jTPS_Unit_Tests {
         // WE'LL JUST USE A SIMPLE NUM FOR TESTING
         var tps = new jTPS();
         var num = new Num();
-        var result = "Test undo: ";
+        var result = "--Test undo: ";
         
         result += this.assertEquals(num.getNum(), 0);
         result += this.assertFalse(tps.hasTransactionToUndo());
@@ -161,8 +163,9 @@ class jTPS_Unit_Tests {
         result += this.assertEquals(3, tps.getRedoSize());
         result += this.assertEquals(0, tps.getUndoSize());
 
-        document.getElementById("testResult").innerHTML +='\r\n';
+        
         document.getElementById("testResult").innerHTML +=result;
+        document.getElementById("testResult").innerHTML+="<br />" ;
     }
 
     /**
@@ -173,7 +176,7 @@ class jTPS_Unit_Tests {
         // WE'LL JUST USE A SIMPLE NUM FOR TESTING
         var tps = new jTPS();
         var num = new Num();
-        var result = "Test Redo: ";
+        var result = "--Test Redo: ";
 
         result += this.assertEquals(num.getNum(), 0);
 
@@ -254,8 +257,9 @@ class jTPS_Unit_Tests {
         result += this.assertEquals(0, tps.getRedoSize());
         result += this.assertEquals(3, tps.getUndoSize());
 
-        document.getElementById("testResult").innerHTML +='\r\n';
+        
         document.getElementById("testResult").innerHTML +=result;
+        document.getElementById("testResult").innerHTML+="<br />" ;
     }
 
     /**
@@ -266,7 +270,7 @@ class jTPS_Unit_Tests {
         // WE'LL JUST USE A SIMPLE NUM FOR TESTING
         var tps = new jTPS();
         var num = new Num();
-        var result = "Test Clear: ";
+        var result = "--Test Clear: ";
         result +=this.assertEquals(num.getNum(), 0);
 
         // ADD 3 TRANSACTIONS (5, 10, and 15)
@@ -310,8 +314,9 @@ class jTPS_Unit_Tests {
         result +=this.assertEquals(0, tps.getRedoSize());
         result +=this.assertEquals(3, tps.getUndoSize());
 
-        document.getElementById("testResult").innerHTML +='\r\n';
+        
         document.getElementById("testResult").innerHTML +=result;
+        document.getElementById("testResult").innerHTML+="<br />" ;
     }
 }
 

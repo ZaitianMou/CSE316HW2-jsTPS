@@ -2,28 +2,29 @@
 <html>
 
 <head>
-    <title>@todo - The Todo List Manager</title>
+    <title>jsTPS</title>
     <link href="./css/fonts/Lexend Exa/css.css" rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="./css/todo_layout.css" />
     <link rel="stylesheet" type="text/css" href="./css/todo_style.css" /> -->
 
-    <script src="/src/jTPS_Unit_Tests.js" type="module"></script>
     <script src="/src/jTPS.js"></script>
     <script src="/src/Num.js"></script>
     <script src="/src/jTPS_Transaction.js"></script>
     <script src="/src/AddToNum_Transaction.js"></script>
     <script src="src/AndMask_Transaction.js"></script>
-    
 
+    <script src="src/jTPS_Tester.js"></script>
+    <script src="/src/jTPS_Unit_Tests.js" type="module"></script>
 
-    <!-- FOR TESTING OUR TODO LISTS -->
-    <!-- <script src="./test/TodoListTester.js"></script> -->
-
+    <script>
+        window.onload = function () {
+            window.jTPS_Tester = new jTPS_Tester();
+        }
+    </script>
 </head>
 
 <body>
     <div>
-
         <p>
             ENTER A SELECTION:
             1) Add a Transaction
@@ -32,8 +33,27 @@
             4) Clear All Transactions
             5) Reset Num and Transactions
         </p>
-        <input type="text" id="userInput">
-        <input type="submit" value="submit">
+        <input type="text" id="userInput" name="userInput">
+        <input type="submit" value="submit" id="buttonForUserInput">
+       
+        <div id="divForAmountInput" hidden>
+            <p>Enter the amount(for add transaction ONLY)</p>
+            <input type="text" id="amountForAddTransaction">
+            <input type="submit" value="submit" id="buttonForAmount">
+        </div>
+    </div>
+
+    <div>
+        <p>Current List: </p>
+        <div id='currentList'>
+
+           
+        </div>
+        <br>
+        <p>num is </p>
+        <div id="numIs"></div>
+        <br>
+
 
     </div>
 

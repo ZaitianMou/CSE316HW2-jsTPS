@@ -34,7 +34,7 @@ class Num {
     }
 
     andMask(mask) {
-        this.num = this.um & mask;
+        this.num = this.num & mask;
     }
 
     orMask(mask) {

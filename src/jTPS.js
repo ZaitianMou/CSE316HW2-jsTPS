@@ -89,7 +89,7 @@ class jTPS {
             var transaction = this.transactions[this.mostRecentTransaction+1];
             transaction.doTransaction();
             this.mostRecentTransaction++;
-            this.performingDo = false;
+            this.performingDo = false; 
         }
     }
     
